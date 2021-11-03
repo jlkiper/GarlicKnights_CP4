@@ -1,0 +1,17 @@
+PROGRAM Knight4
+
+DECLARE
+	INTEGER number
+	INTEGER guess
+
+BEGIN
+	SET number := 36
+	PRINT "Enter an integer: "
+	READ guess
+	WHILE guess <> number
+		PRINT "Enter an integer: "
+		READ guess
+	ENDWHILE
+	PRINT "You guessed the correct number! Congrats!"
+END
+

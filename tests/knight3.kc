@@ -1,0 +1,13 @@
+PROGRAM Knight3
+
+DECLARE
+	STRING word
+
+BEGIN
+	PRINT "Enter a word: "
+	READ word
+	IF word = "compiler" THEN PRINT "Correct <3"
+	ELSE PRINT "WRONG>:("
+	ENDIF
+END
+

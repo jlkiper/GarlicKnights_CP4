@@ -1,0 +1,17 @@
+PROGRAM Knight1
+
+DECLARE
+	INTEGER a
+	INTEGER b
+	INTEGER c
+
+BEGIN
+	PRINT "Enter first number: "
+	READ a
+	PRINT "Enter second number: "
+	READ b
+	SET c := a * b
+	PRINT "Number of knights at the Round Table: "
+	PRINT c
+END
+
