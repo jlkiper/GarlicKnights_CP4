@@ -1,5 +1,5 @@
 <?xml version = "1.0"?>
-<project name="GarlicKnight_CP4-main" default="info" basedir="/home/cs322/GarlicKnights_CP4-main">
+<project name="GarlicKnight_CP4" default="info" basedir="/home/cs322/GarlicKnights_CP4">
 	
 	<target name="info">
 
