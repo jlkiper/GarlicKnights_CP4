@@ -1,4 +1,4 @@
-package knightcodecompiler;
+package compiler;
 /**
  * This class encapsulates a basic grammar test.
  */
@@ -35,15 +35,12 @@ public class CompilerTest{
             
             //System.out.println(tree.toStringTree(parser));
         
-        }
+        }//end try clause
         catch(IOException e){
             System.out.println(e.getMessage());
-        }
+        }//end catch clause
 
 
-    }
-
-
-
+    }//end main
 
 }//end class
