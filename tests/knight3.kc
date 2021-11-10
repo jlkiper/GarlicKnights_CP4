@@ -1,12 +1,12 @@
 PROGRAM Knight3
 
 DECLARE
-	STRING word
+	INTEGER number
 
 BEGIN
-	PRINT "Enter a word: "
-	READ word
-	IF word = "compiler" THEN PRINT "Correct <3"
+	PRINT "Enter a number: "
+	READ number
+	IF number = 36 THEN PRINT "Correct <3"
 	ELSE PRINT "WRONG>:("
 	ENDIF
 END

@@ -10,8 +10,6 @@ BEGIN
 	PRINT "Enter your GPA by closet whole number(EX:1,2,3,4): "
 	READ g
 	IF g = 4 THEN PRINT "Your great!"
-	IF g = 3 THEN PRINT "Your good.!"
-	IF g = 2 THEN PRINT "It's ok..."
 	ELSE PRINT "GET HELP!"
 	ENDIF
 END
