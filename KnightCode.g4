@@ -26,7 +26,7 @@ expr : '(' expr ')'		# Parenthesis
 	 | expr SUB expr    # Subtraction
 	 | expr comp expr   # Comparison
 	 | NUMBER           # Number
-	 | ID   		  	# Id														
+	 | ID   		  #Id														
      ;	
 
 comp : GT 						
