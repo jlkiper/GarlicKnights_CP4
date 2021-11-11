@@ -14,8 +14,9 @@ import java.util.*;
 import org.antlr.v4.runtime.ParserRuleContext; // need to debug every rule
 
 /**
- * Description:
- *
+ * myListener.java
+ * Description:The myListener class holds the symbol table to store any data the listener needs to use and methods to extend the 
+ * appropriate ANTLR classes to build a compiler using the lexer and parser ANTLR generates.
  * @author Jaylon Kiper
  * @author Elizabeth Fultz
  * @version 1.0
@@ -173,7 +174,7 @@ public class variable{
 		cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
         	cw.visit(Opcodes.V11, Opcodes.ACC_PUBLIC,this.programName, null, "java/lang/Object",null);
 	
-		//Use local MethodVisitor to create the constructor for the object
+		//Use local MethodVisitor to create the constructor for the object.
 		MethodVisitor mv=cw.visitMethod(Opcodes.ACC_PUBLIC, "<init>", "()V", null, null);
        	mv.visitCode();
         	mv.visitVarInsn(Opcodes.ALOAD, 0); //load the first local variable: this
@@ -182,7 +183,7 @@ public class variable{
         	mv.visitMaxs(1,1);
         	mv.visitEnd();
        	
-		//Use global MethodVisitor to write bytecode according to entries in the parsetree	
+		//Use global MethodVisitor to write bytecode according to entries in the parse tree.	
 	 	mainVisitor = cw.visitMethod(Opcodes.ACC_PUBLIC + Opcodes.ACC_STATIC,  "main", "([Ljava/lang/String;)V", null, null);
         	mainVisitor.visitCode(); 
       
@@ -221,7 +222,7 @@ public class variable{
 	@Override
 	public void enterFile(KnightCodeParser.FileContext ctx){
 	
-		System.out.println("Enter program rule for first time");
+		System.out.println("Enter Program Rule For First Time:");
 		setupClass();
 		
 	}//end enterFile method
@@ -251,7 +252,7 @@ public class variable{
 			return;
 		}//end if statement
 			
-		System.out.println("Enter declare");
+		System.out.println("Enter Declare");
 		
 		//enter = false;
 		count = ctx.getChildCount();
@@ -267,7 +268,7 @@ public class variable{
 		printHashMap(SymbolTable);
 		
 		//enter = true;
-		System.out.println("Exit declare");
+		System.out.println("Exit Declare");
 		
 	}//end exitDeclare method
 
@@ -282,7 +283,7 @@ public class variable{
 			return;
 		}//end if statement
 		
-		System.out.println("Enter variable");
+		System.out.println("Enter Variable");
 		
 		variable var = new variable();
 		
@@ -302,7 +303,7 @@ public class variable{
 			return;
 		}//end if statement
 		
-		System.out.println("Exit variable");
+		System.out.println("Exit Variable");
 		
 	}//end exitVariable method
 	
@@ -339,7 +340,7 @@ public class variable{
 			return;
 		}//end if statement
 		
-		System.out.println("Enter body!");
+		System.out.println("Enter Body!");
 		
 		count = ctx.getChildCount();
 
@@ -355,7 +356,7 @@ public class variable{
 		
 		mainVisitor.visitLabel(printSkipIf);
 		
-		System.out.println("Exit body!");
+		System.out.println("Exit Body!");
 		
 	}//end exitBody method
 	
@@ -379,7 +380,7 @@ public class variable{
 			return;
 		}//end if statement
 			
-		System.out.println("Enter setvar");
+		System.out.println("Enter Setvar");
 		operationCount = 0;
 		genIntStr = "";
 		
@@ -547,7 +548,7 @@ public class variable{
 		
 		System.out.println("ifCount = " + ifCount1);
     	    	
-		System.out.println("Exit setvar");
+		System.out.println("Exit Setvar");
 		
 	}//end exitSetvar method
 	
@@ -671,7 +672,7 @@ public class variable{
 	public void enterParenthesis(KnightCodeParser.ParenthesisContext ctx){ 
 		if(exit)
 			return;
-		System.out.println("Enter parenthesis");
+		System.out.println("Enter Parenthesis");
 		
 		genIntStr += "(";
 		arithmeticOperation = ")" + arithmeticOperation;
@@ -686,7 +687,7 @@ public class variable{
 		if(arithmeticOperation.length() != 0)
 			arithmeticOperation = arithmeticOperation.substring(1);
 		
-		System.out.println("Exit parenthesis");
+		System.out.println("Exit Parenthesis");
 		
 	}//end exitParenthesis method
 	
@@ -698,7 +699,7 @@ public class variable{
 	public void enterAddition(KnightCodeParser.AdditionContext ctx){ 
 		if(exit)
 			return;
-		System.out.println("Enter addition");
+		System.out.println("Enter Addition");
 		operationCount++;
 		
 		arithmeticOperation = "+" + arithmeticOperation;
@@ -713,7 +714,7 @@ public class variable{
 		//ASM bytecode to add integers
 		mainVisitor.visitInsn(IADD);
                       	
-		System.out.println("Exit addition");
+		System.out.println("Exit Addition");
 	}
 	
 	/**
@@ -724,7 +725,7 @@ public class variable{
 		if(exit)
 			return;
 	
-		System.out.println("Enter multiplication");
+		System.out.println("Enter Multiplication");
 		operationCount++;
 		arithmeticOperation = "*" + arithmeticOperation;
 	
@@ -739,7 +740,7 @@ public class variable{
 		//ASM bytecode to multiply integers
 		mainVisitor.visitInsn(IMUL);
             		
-		System.out.println("Exit multiplication");
+		System.out.println("Exit Multiplication");
 	
 	}//end exitMultiplication method
 	
@@ -751,7 +752,7 @@ public class variable{
 		if(exit)
 			return;
 	
-		System.out.println("Enter division");
+		System.out.println("Enter Division");
 		operationCount++;
 		arithmeticOperation = "/"+arithmeticOperation;
 	
@@ -766,7 +767,7 @@ public class variable{
 		//ASM bytecode to divide integers
 		mainVisitor.visitInsn(IDIV);
             		
-		System.out.println("Exit division");
+		System.out.println("Exit Division");
 	
 	}//end exitDivision method
 	
@@ -779,7 +780,7 @@ public class variable{
 		if(exit)
 			return;
 			
-		System.out.println("Enter subtraction");
+		System.out.println("Enter Subtraction");
 		operationCount++;
 		arithmeticOperation = "-"+ arithmeticOperation;
 	
@@ -794,7 +795,7 @@ public class variable{
 		//ASM bytecode to subtract integers
 		mainVisitor.visitInsn(ISUB);
             	           	
-		System.out.println("Exit subtraction");
+		System.out.println("Exit Subtraction");
 	}//end exitSubtraction method
 	
 	/**
@@ -854,6 +855,7 @@ public class variable{
 		mainVisitor.visitLabel(label2);
 		
 		System.out.println("Exit Comparison");
+		
 	}//end exitComparison method
 	 
 	/**
@@ -1479,7 +1481,7 @@ public class variable{
 		}//end if statement
 		
 		System.out.println("-----------------------------------------------------------------");
-		System.out.println("Enter print");
+		System.out.println("Enter Print");
 
 		key2 = ctx.getChild(1).getText();
 
@@ -1636,7 +1638,7 @@ public class variable{
 		
 		System.out.println("ifCount = " + ifCount1);
 		System.out.println("decNestStack = " + decNestStack);
-		System.out.println("Exit print");
+		System.out.println("Exit Print");
 	}//end exitPrint method
 	
 	public boolean alreadyRead = false;
@@ -1651,7 +1653,7 @@ public class variable{
 			return;
 		}//end if statement
 		
-		System.out.println("Enter read\n");
+		System.out.println("Enter Read\n");
 		
 		if(ctx.getChild(1) != null){
 			key = ctx.getChild(1).getText();
@@ -1828,7 +1830,7 @@ public class variable{
 		
 		System.out.println("ifCount = " + ifCount1);
 		
-		System.out.println("Exit read\n");
+		System.out.println("Exit Read\n");
 		
 
 	}//end exitRead method
@@ -1879,7 +1881,7 @@ public class variable{
 			return;
 		}//end if statement
 		
-		System.out.println("Enter loop");
+		System.out.println("Enter Loop");
 		
 		if(loopLabCount > 9){
 		
@@ -1939,7 +1941,7 @@ public class variable{
 			return;
 		
 		
-		}
+		}//end if statement
 		
 		if(!ctx.getChild(syntaxTest-1).getText().equalsIgnoreCase("ENDWHILE")){
 		
@@ -2335,7 +2337,7 @@ public class variable{
 		
 		System.out.println("ifCount = " + ifCount1);	
 				
-		System.out.println("Exit loop");
+		System.out.println("Exit Loop");
 		
 	}//end exitLoop method
 	

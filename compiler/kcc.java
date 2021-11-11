@@ -9,6 +9,7 @@ import org.antlr.v4.gui.Trees;
 
 import lexparse.*;
 
+//Java files
 import java.util.*;
 import java.io.IOException;
 
@@ -34,7 +35,7 @@ public class kcc{
 	String file;
 	String output;
 	
-	//These statement c
+	//These if else statements pass the knightcode file to output folder into a result.
 	if(args.length == 2){
 	
 		file = args[0];
@@ -50,7 +51,7 @@ public class kcc{
 		file = "tests/program1.kc";
 		output = "output/result";
 	
-	}//end if else
+	}//end if else statement
 	
 	//Clause statement gets input from user to complie and parse through from myListener.
         try{
