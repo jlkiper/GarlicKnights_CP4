@@ -21,7 +21,7 @@ Instructions:
 -ant compile
 
 5.Java command to build parse tree based on knightcode.
--java compiler/CompilerTest.java "tests/program.kc" or java compiler/CompilerTest.java "tests/knight1.kc"
+-java compiler/CompilerTest "tests/program1.kc" or java compiler/CompilerTest "tests/knight1.kc"
 
 6.Java command to run knightcode files via the compiler to output folder.
 -java compiler/kcc "tests/program1.kc" or java compiler/kcc "tests/knight1.kc"
