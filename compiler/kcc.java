@@ -14,8 +14,9 @@ import java.util.*;
 import java.io.IOException;
 
 /**
- * Description:
- *
+ * kcc.java
+ * Description:The kcc class pushes knightcode files to output folder into a result file. Then clause statement getting input from the 
+ * user to complie and parse through from myListener class.
  * @author Jaylon Kiper
  * @author Elizabeth Fultz
  * @version 1.0
@@ -35,7 +36,7 @@ public class kcc{
 	String file;
 	String output;
 	
-	//These if else statements pass the knightcode file to output folder into a result.
+	//These if else statements pass the knightcode file to output folder into a result file.
 	if(args.length == 2){
 	
 		file = args[0];
