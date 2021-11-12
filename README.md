@@ -4,8 +4,7 @@ Project Summary:
 The purpose of this project is to write a small compiler for a toy language named KnightCode using ANTLR(lexer/parser) and ASM(bytecode manipulation) libraries. This project bulds on using the ASM library to write bytecode directly to a class file. The ANTLR library will provide the classes and mechanisms to build/walk a parse tree. Our goal was to extend those classes/mechanisms to write a bytecode class file based on KnightCode that can be executed with Java. One java file called myListener holds the symbol table to store any data the listener needs to use and methods to extend the appropriate ANTLR classes to build a compiler using the lexer and parser ANTLR generates. Another java file called kcc contains the main method to kick off the compiler.
 
 Team Members:
-Jaylon Kiper
-,Elizabeth Fultz
+Jaylon Kiper, Elizabeth Fultz
 
 Instructions:
 
