@@ -5,9 +5,10 @@ The purpose of this project is to write a small compiler for a toy language name
 
 Team Members:
 Jaylon Kiper
-Elizabeth Fultz
+,Elizabeth Fultz
 
 Instructions:
+
 1.Change directory to folder named "GarlicKnights_CP4"
 -cd GarlicKnights_CP4
 
