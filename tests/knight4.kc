@@ -2,16 +2,16 @@ PROGRAM Knight4
 
 DECLARE
 	INTEGER number
-	INTEGER guess
+	INTEGER reps
 
 BEGIN
-	SET number := 36
-	PRINT "Enter an integer: "
-	READ guess
-	WHILE guess <> number DO
-		PRINT "Enter an integer: "
-		READ guess
+	PRINT "Enter your number: "
+	READ number
+	PRINT "Enter repetitions: "
+	READ reps
+	WHILE reps> 0 DO
+		PRINT number
+		SET number := number / 2
+		SET reps := reps - 1
 	ENDWHILE
-	PRINT "You guessed the correct number! Congrats!"
 END
-
